@@ -176,4 +176,7 @@
     border: none;
     cursor: pointer;
   }
+  .container {
+    text-align: center;
+  }
 </style>
