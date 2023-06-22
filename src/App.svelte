@@ -6,6 +6,7 @@
   const dispatch = createEventDispatcher();
   let showWhyRecruitlyPopup = false;
   let showPricingPopup = false;
+  let showOverviewPopup = false;
   function openWhyRecruitlyPopup() {
     showWhyRecruitlyPopup = true;
   }
@@ -17,6 +18,12 @@
   function closePopup() {
     showWhyRecruitlyPopup = false;
     showPricingPopup = false;
+    showOverviewPopup = false;
+  }
+  function openOverview() {
+    // Add your code here to handle the button click event
+    // For example, you can redirect to an overview page or show the overview content
+    showOverviewPopup = true;
   }
 
   
@@ -25,12 +32,14 @@
 
 <main>
   <div class="container">
-    <h1 class="display-4" style="color:blue;font-weight: 700;">
+    <h1 class="display-4" style="color:blue;font-weight: 700;" >
       Recruitment CRM System
     </h1>
+    
     <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
   </div>
-</main>
+  <button class="overview-button" on:click={openOverview} >Overview</button>
+   </main>
 
 <div class="information">
   <p on:click={openWhyRecruitlyPopup} style="color:blue;">Why Recruitly</p>
@@ -81,16 +90,32 @@
   </div>
   
 {/if}
+{#if showOverviewPopup}
+  <div class="popup" on:click={closePopup}>
+    <div class="popup-content">
+      <button class="close-button" on:click={closePopup}>&times;</button>
+      <div class="popup-video-section">
+        <iframe class="popup-video" src="https://www.youtube.com/embed/9L0fVJb7zSk" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+{/if}
     
 
 
 <style>
   /* Add custom styles for your opening page here */
+  .container {
+    text-align: center;
+    margin-top: 200px;
+  }
   h1.display-4 {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
     font-stretch: expanded;
-	text-align: center;
+  }
+  .font-weight-bold {
+    font-weight: bold;
   }
 
   .header {
@@ -132,9 +157,8 @@
     padding: 20px;
     text-align: center;
     border-radius: 5px;
-    height: auto;
-    max-height: 90%;
-    width: 90%;
+    width: 80%; /* Increased the width */
+    height: 80%; /* Increased the height */
     max-width: 800px;
     display: flex;
     flex-wrap: wrap;
@@ -176,8 +200,25 @@
     border: none;
     cursor: pointer;
   }
-  .container {
+  .overview-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .popup-video-section {
+    width: 100%;
     text-align: center;
-	margin-top: 250px;
+  }
+
+  .popup-video {
+    width: 100%;
+    height: 400px;
   }
 </style>
