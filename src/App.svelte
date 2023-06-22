@@ -1,4 +1,4 @@
-<!-- src/App.svelte -->
+
 <script>
   import { createEventDispatcher } from 'svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
