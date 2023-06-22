@@ -283,7 +283,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    margin-left: 500px; /* Add margin from the left side */
+    margin-left: 700px; /* Add margin from the left side */
     margin-right: auto; /* Add margin from the right side */
   }
   .popup-video-section {
