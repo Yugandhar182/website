@@ -90,6 +90,7 @@
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
     font-stretch: expanded;
+	text-align: center;
   }
 
   .header {
