@@ -180,4 +180,27 @@
     text-align: center;
 	margin-top: 250px;
   }
+  .overview-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 500px; /* Add margin from the left side */
+    margin-right: auto; /* Add margin from the right side */
+  }
+  .popup-video-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .popup-video {
+    width: 100%;
+    height: 400px;
+  }
 </style>
