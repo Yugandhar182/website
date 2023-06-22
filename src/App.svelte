@@ -7,6 +7,13 @@
   let showWhyRecruitlyPopup = false;
   let showPricingPopup = false;
   let showOverviewPopup = false;
+  let featureIndex = 0;
+  const features = [
+    { text: 'ATS', color: 'blue' },
+    { text: 'CRM', color: 'green' },
+    { text: 'Marketing', color: 'purple' }
+  ];
+
   function openWhyRecruitlyPopup() {
     showWhyRecruitlyPopup = true;
   }
@@ -25,20 +32,27 @@
     // For example, you can redirect to an overview page or show the overview content
     showOverviewPopup = true;
   }
-
+  setInterval(() => {
+    featureIndex = (featureIndex + 1) % features.length;
+  }, 2000);
   
  
 </script>
 
 <main>
   <div class="container">
-    <h1 class="display-4" style="color:blue;font-weight: 700;" >
-      Recruitment CRM System
-    </h1>
+    <h1 class="display-4"style="color:blue;font-weight: 700;" > Recruitment</h1>
+     <h1 class="display-4"style="color:blue;font-weight: 700;"><span class="feature-text" style="color: {features[featureIndex].color}; font-weight: 700;">
+      {features[featureIndex].text}
+    </span>
+    System</h1>
+      
     
-    <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
+   <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
   </div>
-  <button class="overview-button" on:click={openOverview} >Overview</button>
+  <div class="overview-button-container">
+    <button class="overview-button" on:click={openOverview}>Overview</button>
+  </div>
    </main>
 
 <div class="information">
@@ -211,27 +225,6 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-  }
-  .popup-video-section {
-    width: 100%;
-    text-align: center;
-  }
-
-  .popup-video {
-    width: 100%;
-    height: 400px;
-  }
-  .overview-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: yellow;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     margin-left: 500px; /* Add margin from the left side */
     margin-right: auto; /* Add margin from the right side */
   }
@@ -244,4 +237,5 @@
     width: 100%;
     height: 400px;
   }
+  
 </style>
