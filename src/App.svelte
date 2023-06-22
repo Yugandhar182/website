@@ -25,7 +25,7 @@
 
 <main>
   <div class="container">
-    <h1 class="display-4" style="color:blue;">
+    <h1 class="display-4" style="color:blue;font-weight: 700;">
       Recruitment CRM System
     </h1>
     <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
@@ -178,6 +178,6 @@
   }
   .container {
     text-align: center;
-	margin-top: 400px;
+	margin-top: 250px;
   }
 </style>
