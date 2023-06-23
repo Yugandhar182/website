@@ -5,9 +5,10 @@
   import 'bootstrap/dist/css/bootstrap.min.css';
 
   const dispatch = createEventDispatcher();
-  let showWhyRecruitlyPopup = false;
+  
   
   let showOverviewPopup = false;
+  let showWhyRecruitlyPopup = false;
  
   let featureIndex = 0;
   const features = [
@@ -21,11 +22,9 @@
   }
 
   
-
-
   function closePopup() {
+   
     showWhyRecruitlyPopup = false;
-    
     showOverviewPopup = false;
     
   }
@@ -36,11 +35,21 @@
   setInterval(() => {
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
-  
+
  
 </script>
 
 <main>
+  
+  
+
+  <div class="information">
+    <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
+      <li><a href="#automation" style="color: blue; font-weight: 700;">Automation</a></li>
+      <li><a href="#pricing" style="color: blue; font-weight: 700;">Pricing</a></li>
+  </div>
+  
+  
   <div class="container">
     <h1 class="display-4"style="color:blue;font-weight: 700;" > Recruitment</h1>
      <h1 class="display-4"style="color:blue;font-weight: 700;"><span class="feature-text" style="color: {features[featureIndex].color}; font-weight: 700;">
@@ -60,21 +69,21 @@
         <div class="col-md-4">
           <div class="feature-card">
             <i class="fa fa-search"></i>
-            <h3>Powerful Search</h3>
+            <h3 style="color:red; font-weight: 700;">Powerful Search</h3>
             <p>Efficiently search and filter through a large pool of candidates.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
             <i class="fa fa-envelope"></i>
-            <h3>Email Integration</h3>
+            <h3 style="color:blue;font-weight: 700;">Email Integration</h3>
             <p>Seamlessly integrate with your email client for easy communication.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="feature-card">
             <i class="fa fa-users"></i>
-            <h3>Collaborative Hiring</h3>
+            <h3 style="color:purple;font-weight: 700;">Collaborative Hiring</h3>
             <p>Collaborate with your team to make better hiring decisions.</p>
           </div>
         </div>
@@ -87,7 +96,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h2>What Our Clients Say</h2>
+          <h2 style="font-weight: 700;">What Our Clients Say</h2>
           <div class="testimonial">
             <p>"Recuitly.io has transformed our hiring process. We found the perfect candidates in no time."</p>
             <p class="testimonial-author">John Doe, CEO at ABC Company</p>
@@ -102,60 +111,50 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <p>&copy; 2023 Recuitly.io. All rights reserved.</p>
+          <p style="font-weight: 700;">&copy; 2023 Recuitly.io. All rights reserved.</p>
         </div>
-        <div class="col-md-6">
-          <ul class="footer-links">
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </footer>
    </main>
 
-<div class="information">
-  <p on:click={openWhyRecruitlyPopup} style="color:blue;">Why Recruitly</p>
-  <p style="color:blue;">Automation</p>
-  <p  style="color:blue;">Pricing</p>
-</div>
-
-{#if showWhyRecruitlyPopup}
-  <div class="popup" on:click={closePopup}>
-    <div class="popup-content">
-      <button class="close-button" on:click={closePopup}>&times;</button>
-      <div class="popup-section">
-        <h3>Email Marketing</h3>
-        <p class="custom-paragraph">Engage talent at the right time, promote your business to the right audience.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Applicant Tracking System</h3>
-        <p class="custom-paragraph">Candidate sharing, boolean searches, interview scheduling, automation and more.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Website Integration</h3>
-        <p class="custom-paragraph">Turn your WordPress website into a fully featured job-board using our FREE plugins.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Job Distribution</h3>
-        <p class="custom-paragraph">Get your job in front of millions of candidates, manage applicants in one place.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Search & Import</h3>
-        <p class="custom-paragraph">Search and import candidates from CV-Library and TotalJobs with just a few clicks.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Recruiting Automation</h3>
-        <p class="custom-paragraph">Boost your team's productivity by creating workflows that automate repetitive and common tasks.</p>
-      </div>
-   </div>
-    </div>
-    {/if}
+   {#if showWhyRecruitlyPopup}
    
-  
-  
+   
+   <div class="popup" on:click={closePopup}>
+     <div class="popup-content">
+       <button class="close-button" on:click={closePopup}>&times;</button>
+       <div class="popup-section">
+         <h3>Email Marketing</h3>
+         <p class="custom-paragraph">Engage talent at the right time, promote your business to the right audience.</p>
+       </div>
+       <div class="popup-section">
+         <h3>Applicant Tracking System</h3>
+         <p class="custom-paragraph">Candidate sharing, boolean searches, interview scheduling, automation and more.</p>
+       </div>
+       <div class="popup-section">
+         <h3>Website Integration</h3>
+         <p class="custom-paragraph">Turn your WordPress website into a fully featured job-board using our FREE plugins.</p>
+       </div>
+       <div class="popup-section">
+         <h3>Job Distribution</h3>
+         <p class="custom-paragraph">Get your job in front of millions of candidates, manage applicants in one place.</p>
+       </div>
+       <div class="popup-section">
+         <h3>Search & Import</h3>
+         <p class="custom-paragraph">Search and import candidates from CV-Library and TotalJobs with just a few clicks.</p>
+       </div>
+       <div class="popup-section">
+         <h3>Recruiting Automation</h3>
+         <p class="custom-paragraph">Boost your team's productivity by creating workflows that automate repetitive and common tasks.</p>
+       </div>
+     </div>
+   </div>
+
+ {/if}
+ 
+
 {#if showOverviewPopup}
   <div class="popup" on:click={closePopup}>
     <div class="popup-content">
@@ -173,7 +172,9 @@
 
 
 <style>
-  /* Add custom styles for your opening page here */
+  
+    
+
   .container {
     text-align: center;
     margin-top: 200px;
@@ -293,7 +294,9 @@
     height: 400px;
   }
 
- 
+  .why-recruitly-anchor {
+    cursor: pointer;
+  }
  
 
 
