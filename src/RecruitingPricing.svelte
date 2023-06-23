@@ -7,7 +7,7 @@
   </script>
   
   <section class="Recruitly Pricing">
-    <div class="automation-component">
+    <div class="pricing-component">
       <div class="hero-section">
         <h1 style="color:blue;">Recruitly Pricing</h1>
         <p>Pricing that allows you to scale on demand</p>
@@ -47,22 +47,20 @@
         
       
         
-        
-        
-        
-        
-        
-        
-          <button class="close-button" on:click={closeComponent}>Close</button>
+    <button  class="close-button" on:click={closeComponent}>Close</button>
         
       </div>
       
   </section>
   
   <style>
+      .hero-section {
+    text-align: center;
+    margin-bottom: 100px;
+  }
    
   
-    .recruiting-automation-section h1 {
+    .recruiting-pricing-section h1 {
       color: blue;
       font-weight: bold;
       font-size: 2rem;
@@ -85,7 +83,7 @@
       font-family: Arial, sans-serif;
     }
 
-    .automation-component {
+    .pricing-component {
       width: 100%;
       height: 100vh;
       display: flex;
@@ -98,17 +96,17 @@
 
     
 
-    .automation-component p {
+    .pricing-component p {
       font-size: 18px;
       margin-bottom: 10px;
     }
 
-    .automation-component ul {
+    .pricing-component ul {
       list-style-type: disc;
       margin-left: 20px;
     }
 
-    .automation-component li {
+    .pricing-component li {
       font-size: 16px;
       margin-bottom: 5px;
     }
