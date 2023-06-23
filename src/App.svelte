@@ -1,8 +1,10 @@
 
 <script>
   import { createEventDispatcher } from 'svelte';
- 
+  import { onMount } from 'svelte';
+  import RecruitingAutomation from './RecruitingAutomation.svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
+  import RecruitingPricing from './RecruitingPricing.svelte';
 
   const dispatch = createEventDispatcher();
   
@@ -16,6 +18,25 @@
   let companyName = '';
   let linkedIn = '';
   let address = '';
+  let showRecruitingAutomation = false; 
+  let showRecruitingPricing = true;
+
+// ... your existing code ...
+
+function openRecruitingAutomation() {
+  showRecruitingAutomation = true;
+}
+
+function closeRecruitingAutomation() {
+  showRecruitingAutomation = false;
+}
+function openRecruitingPricing() {
+  showRecruitingPricing = true;
+}
+
+function closeRecruitingPricing() {
+  showRecruitingPricing = false;
+}
  
   let featureIndex = 0;
   const features = [
@@ -47,7 +68,6 @@
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
 
-
  
  
  
@@ -55,14 +75,28 @@
 
 <main>
 
+  
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
-      <li><a href="#automation" style="color: blue; font-weight: 700;">Automation</a></li>
-      <li><a href="#pricing" style="color: blue; font-weight: 700;">Pricing</a></li>
+      <li><a href="#automation"  on:click={openRecruitingAutomation} style="color: blue; font-weight: 700;">Automation</a></li>
+      <li><a href="#pricing" on:click={openRecruitingPricing}  style="color: blue; font-weight: 700;">Pricing</a></li>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
 
   </div>
+  
+    
+   
+  
+    {#if showRecruitingAutomation}
+      <RecruitingAutomation onClose={closeRecruitingAutomation} />
+    {/if}
+    {#if showRecruitingPricing}
+    <RecruitingPricing onClose={closeRecruitingPricing} />
+  {/if}
+
  
+  
+
   
   
   <div class="container">
@@ -332,7 +366,7 @@
   }
 
   body {
-    background-color: #e2f3fc;
+    background-color: wheat;
   }
   .close-button {
     position: absolute;
@@ -376,6 +410,9 @@
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control transparency */
   }
 
+  .spacer {
+  flex-grow: 1;
+}
 
   
 </style>
