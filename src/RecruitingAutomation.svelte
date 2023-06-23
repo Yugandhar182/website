@@ -8,9 +8,10 @@
   
   <section class="recruiting-automation-section">
     <div class="automation-component">
-        <h2>Recruiting Automation</h2>
+      <div class="hero-section">
+        <h2 style="color: darkmagenta;">Recruiting Automation</h2>
         <p>Recruiting automation allows you to focus on the work that matters!</p>
-        
+      </div>
         <section class="testimonials-section">
           <table>
           <div class="container">
@@ -36,19 +37,21 @@
                   <h6>Automate mundane tasks so your team can focus on delivering smooth experience at every step of the recruiting cycle.</h6>
                 </div>
               </div>
-            </div>
+            
           </div>
         </table>
         </section>
           <button class="close-button" on:click={closeComponent}>Close</button>
-       
       </div>
       
   </section>
   
   <style>
    
-  
+   .hero-section {
+    text-align: center;
+    margin-bottom: 200px;
+  }
     .recruiting-automation-section h1 {
       color: blue;
       font-weight: bold;
