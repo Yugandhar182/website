@@ -5,10 +5,9 @@
 
   const dispatch = createEventDispatcher();
   let showWhyRecruitlyPopup = false;
+  let showPricingPopup = false;
   let showOverviewPopup = false;
-    
-  
- 
+  let showAutomationPopup =false;
   let featureIndex = 0;
   const features = [
     { text: 'ATS', color: 'blue' },
@@ -20,90 +19,27 @@
     showWhyRecruitlyPopup = true;
   }
 
+  function openPricingPopup() {
+    showPricingPopup = true;
+  }
+  function openAutomationPopup() {
+    showAutomationPopup = true;
+  }
+ 
+
   function closePopup() {
     showWhyRecruitlyPopup = false;
-    
+    showPricingPopup = false;
     showOverviewPopup = false;
-    
+    showAutomationPopup=false;
   }
   function openOverview() {
-   showOverviewPopup = true;
+   
+    showOverviewPopup = true;
   }
   setInterval(() => {
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
-
-  function tryFree() {
-  const formWindow = window.open('', '_blank');
-  formWindow.document.write(`
-  
-    <form class="needs-validation" novalidate>
-      <div class="form-group">
-        <label for="firstName" class="form-label">First Name:</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="lastName" class="form-label">Last Name:</label>
-        <input type="text" class="form-control" id="lastName" name="lastName" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="email" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="email" name="email" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="password" class="form-label">Password:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="companyName" class="form-label">Company Name:</label>
-        <input type="text" class="form-control" id="companyName" name="companyName" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="linkedinURL" class="form-label">LinkedIn URL:</label>
-        <input type="text" class="form-control" id="linkedinURL" name="linkedinURL" required>
-        
-      </div>
-
-      <div class="form-group">
-        <label for="address" class="form-label">Address:</label>
-        <input type="text" class="form-control" id="Address" name="Address" required>
-        
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  `);
-  formWindow.document.write(`
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #e2f3fc;
-      }
-
-      .form-container {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-      }
-    </style>
-  `);
-}
-
-
   
  
 </script>
@@ -126,14 +62,8 @@
 
 <div class="information">
   <p on:click={openWhyRecruitlyPopup} style="color:blue;">Why Recruitly</p>
-  <div class="spacer"></div>
-  <p style="color:blue;" >Automation</p>
-  <div class="spacer"></div>
-  <p style="color:blue;">Pricing</p>
-  <div class="spacer"></div>
-  <button class="overview-button" on:click={tryFree} style="color:red;">Try Free</button>
-
-  
+  <p on:click={openAutomationPopup} style="color:blue;">Automation</p>
+  <p on:click={openPricingPopup} style="color:blue;">Pricing</p>
 </div>
 
 {#if showWhyRecruitlyPopup}
@@ -167,7 +97,45 @@
    </div>
     </div>
     {/if}
-    
+    {#if showPricingPopup}
+    <div class="popup pricing-popup">
+      <div class="popup-content">
+        <button class="close-button" on:click={closePopup}>&times;</button>
+        <div class="popup-section">
+          <h3>Recruitly Pricing</h3>
+          <div class="pricing-tier">
+            <h4>Solo</h4>
+            <p class="custom-paragraph">For independent recruiters</p>
+            <p class="custom-paragraph pricing-details">
+              $35/user/month
+            </p>
+          </div>
+          <div class="pricing-tier">
+            <h4>Startup</h4>
+            <p class="custom-paragraph">For startup agencies</p>
+            <p class="custom-paragraph pricing-details">
+              $50/user/month
+            </p>
+          </div>
+          <div class="pricing-tier">
+            <h4>Professional</h4>
+            <p class="custom-paragraph">For established teams</p>
+            <p class="custom-paragraph pricing-details">
+              $75/user/month
+            </p>
+          </div>
+          <div class="pricing-tier">
+            <h4>Enterprise</h4>
+            <p class="custom-paragraph">For large organizations</p>
+            <p class="custom-paragraph pricing-details">
+              $100/user/month
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {/if}
+  
   
 {#if showOverviewPopup}
   <div class="popup" on:click={closePopup}>
@@ -180,8 +148,31 @@
   </div>
 {/if}
 
+{#if showAutomationPopup}
+  <div class="popup automation-popup" on:click={closePopup}>
+    <div class="popup-content">
+      <button class="close-button" on:click={closePopup}>&times;</button>
+      <div class="popup-section">
+        <h3>Recruiting Automation</h3>
+        <p class="custom-paragraph">Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each day.</p>
+      </div>
+      <div class="popup-section">
+        <h3>Save time</h3>
+        <p class="custom-paragraph">Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each week.</p>
+      </div>
+      <div class="popup-section">
+        <h3>Be in control</h3>
+        <p class="custom-paragraph">Ensure that recruiting standards are enforced automatically, and build a streamlined and error-proof workflow.</p>
+      </div>
+      <div class="popup-section">
+        <h3>Automate everything</h3>
+        <p class="custom-paragraph">Automate mundane tasks so your team can focus on delivering a smooth experience at every step of the recruiting cycle.</p>
+      </div>
+    </div>
+  </div>
+{/if}
 
-
+    
 
 
 <style>
@@ -292,7 +283,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    margin-left: 500px; /* Add margin from the left side */
+    margin-left: 700px; /* Add margin from the left side */
     margin-right: auto; /* Add margin from the right side */
   }
   .popup-video-section {
@@ -304,10 +295,10 @@
     width: 100%;
     height: 400px;
   }
-  .spacer {
-    width: 20px; /* Adjust the width as needed */
-  }
+
+ 
+ 
 
 
-
+  
 </style>
