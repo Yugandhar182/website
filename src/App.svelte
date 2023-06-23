@@ -19,7 +19,7 @@
   let linkedIn = '';
   let address = '';
   let showRecruitingAutomation = false; 
-  let showRecruitingPricing = true;
+  let showRecruitingPricing = false;
 
 // ... your existing code ...
 
