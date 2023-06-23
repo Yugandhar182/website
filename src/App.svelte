@@ -106,12 +106,26 @@
     </div>
   </section>
 
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h2 style="color:green;font-weight: 1000;">Faster, Smarter and Effective Recruitment CRM</h2>
+          <div class="testimonial">
+            <p>Recruit faster and smarter with our customisable pipelines, built-in job posting and out-of-the-box integrations with the tools you already use and love.</p>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   
   <section class="testimonials-section">
     <div class="container">
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <h2 style="font-weight: 700;">What Our Clients Say</h2>
+          <h2 style="color:darkred;font-weight: 700;">What Our Clients Say</h2>
           <div class="testimonial">
             <p>"Recuitly.io has transformed our hiring process. We found the perfect candidates in no time."</p>
             <p class="testimonial-author">John Doe, CEO at ABC Company</p>
@@ -120,8 +134,7 @@
       </div>
     </div>
   </section>
-
- 
+  
   <footer class="footer-section">
     <div class="container">
       <div class="row">
@@ -199,27 +212,27 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="firstName">First Name</label>
+            <label for="firstName"></label>
             <input type="text" class="form-control" id="firstName" bind:value={firstName} placeholder="Enter your first name">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email"></label>
             <input type="email" class="form-control" id="email" bind:value={email} placeholder="Enter your email">
           </div>
           <div class="form-group">
-            <label for="mobile">Mobile</label>
+            <label for="mobile"></label>
             <input type="tel" class="form-control" id="mobile" bind:value={mobile} placeholder="Enter your mobile number">
           </div>
           <div class="form-group">
-            <label for="companyName">Company Name</label>
+            <label for="companyName"></label>
             <input type="text" class="form-control" id="companyName" bind:value={companyName} placeholder="Enter your company name">
           </div>
           <div class="form-group">
-            <label for="linkedIn">LinkedIn</label>
+            <label for="linkedIn"></label>
             <input type="text" class="form-control" id="linkedIn" bind:value={linkedIn} placeholder="Enter your LinkedIn profile URL">
           </div>
           <div class="form-group">
-            <label for="address">Address</label>
+            <label for="address"></label>
             <textarea class="form-control" id="address" bind:value={address} placeholder="Enter your address"></textarea>
           </div>
         </form>
