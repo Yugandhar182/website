@@ -8,43 +8,52 @@
   
   <section class="Recruitly Pricing">
     <div class="automation-component">
-        <h2>Recruitly Pricing</h2>
-        <p>Pricing that allows you to scale on demand </p>
-        <section class="testimonials-section">
-        <section class="pricing-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="pricing-card">
-                  <h3 class="plan-title">Solo</h3>
-                  <div class="price">$35</div>
-                  <div class="price-details">/user/month</div>
-                 
-                </div>
+      <div class="hero-section">
+        <h1 style="color:blue;">Recruitly Pricing</h1>
+        <p>Pricing that allows you to scale on demand</p>
+      </div>
+      <section class="features-section">
+        <table>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fa fa-search"></i>
+                <h3 style="color:purple; font-weight:600;">solo</h3>
+                <p>For independent recruiters</p>
+                <h3 >$35</h3>
               </div>
-              <div class="col-md-4">
-                <div class="pricing-card">
-                  <h3 class="plan-title">Startup</h3>
-                  <div class="price">$50</div>
-                  <div class="price-details">/user/month</div>
-                
-                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fa fa-envelope"></i>
+                <h3 style="color:purple; font-weight:600;">Startup</h3>
+                <p>For startup agencies</p>
+                <h3 >$50</h3>
               </div>
-              <div class="col-md-4">
-                <div class="pricing-card">
-                  <h3 class="plan-title">Professional</h3>
-                  <div class="price">$75</div>
-                  <div class="price-details">/user/month</div>
-                 
-                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature-card">
+                <i class="fa fa-users"></i>
+                <h3 style="color:purple; font-weight:600;">Professional</h3>
+                <p>For established teams</p>
+                <h3 >$75</h3>
               </div>
-             
             </div>
           </div>
-        </section>
+        </div>
+      </table>
       </section>
+        
       
-        <button class="close-button" on:click={closeComponent}>Close</button>
+        
+        
+        
+        
+        
+        
+        
+          <button class="close-button" on:click={closeComponent}>Close</button>
         
       </div>
       
@@ -63,7 +72,7 @@
     .close-button {
       margin-top: 20px;
       padding: 10px 20px;
-      background-color: red;
+      background-color: purple;
       color: white;
       border: none;
       border-radius: 5px;
