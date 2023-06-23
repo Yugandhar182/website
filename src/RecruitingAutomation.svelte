@@ -10,16 +10,38 @@
     <div class="automation-component">
         <h2>Recruiting Automation</h2>
         <p>Recruiting automation allows you to focus on the work that matters!</p>
-        <p>Automation can be key to recruiting efficiency, but only if done right. It takes time and effort to create the right workflow that is optimal for your business. Our intuitive automation platform allows you to configure the triggers, actions and amend them when necessary with ease.</p>
-        <ul>
-          <li>Save time</li>
-          <li>Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each week.</li>
-          <li>Be in control</li>
-          <li>Ensure that recruiting standards are enforced automatically, and build a streamlined and an error-proof workflow.</li>
-          <li>Automate everything</li>
-          <li>Automate mundane tasks so your team can focus on delivering a smooth experience at every step of the recruiting cycle.</li>
+        
+        <section class="testimonials-section">
+          <table>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="feature-card">
+                  <i class="fa fa-search"></i>
+                  <h3 style="color:purple; font-weight:600;">Save time</h3>
+                  <h6>Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each week.</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-card">
+                  <i class="fa fa-envelope"></i>
+                  <h3 style="color:purple; font-weight:600;">Be in control</h3>
+                  <h6>Ensure that recruiting standards are enforced automatically, and build a streamlined and an error proof workflow.</h6>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="feature-card">
+                  <i class="fa fa-users"></i>
+                  <h3 style="color:purple; font-weight:600;">Automate everything</h3>
+                  <h6>Automate mundane tasks so your team can focus on delivering smooth experience at every step of the recruiting cycle.</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </table>
+        </section>
           <button class="close-button" on:click={closeComponent}>Close</button>
-        </ul>
+       
       </div>
       
   </section>
