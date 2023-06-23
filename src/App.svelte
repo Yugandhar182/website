@@ -94,19 +94,13 @@ function closeRecruitingPricing() {
     <RecruitingPricing onClose={closeRecruitingPricing} />
   {/if}
 
- 
-  
-
-  
-  
-  <div class="container">
+ <div class="container">
     <h1 class="display-4"style="color:blue;font-weight: 700;" > Recruitment</h1>
      <h1 class="display-4"style="color:blue;font-weight: 700;"><span class="feature-text" style="color: {features[featureIndex].color}; font-weight: 700;">
       {features[featureIndex].text}
     </span>
     System</h1>
       
-    
    <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
   </div>
   <div class="overview-button-container">
