@@ -9,6 +9,13 @@
   
   let showOverviewPopup = false;
   let showWhyRecruitlyPopup = false;
+  let showTryFreeModal = false;
+  let firstName = '';
+  let email = '';
+  let mobile = '';
+  let companyName = '';
+  let linkedIn = '';
+  let address = '';
  
   let featureIndex = 0;
   const features = [
@@ -16,14 +23,18 @@
     { text: 'CRM', color: 'green' },
     { text: 'Marketing', color: 'purple' }
   ];
+  function openTryFreeModal() {
+    showTryFreeModal = true;
+  }
 
+ 
   function openWhyRecruitlyPopup() {
     showWhyRecruitlyPopup = true;
   }
 
   
   function closePopup() {
-   
+    showTryFreeModal = false;
     showWhyRecruitlyPopup = false;
     showOverviewPopup = false;
     
@@ -36,18 +47,22 @@
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
 
+
+ 
+ 
  
 </script>
 
 <main>
-  
-  
 
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
       <li><a href="#automation" style="color: blue; font-weight: 700;">Automation</a></li>
       <li><a href="#pricing" style="color: blue; font-weight: 700;">Pricing</a></li>
+      <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
+
   </div>
+ 
   
   
   <div class="container">
@@ -123,6 +138,7 @@
    
    
    <div class="popup" on:click={closePopup}>
+    
      <div class="popup-content">
        <button class="close-button" on:click={closePopup}>&times;</button>
        <div class="popup-section">
@@ -167,9 +183,54 @@
 {/if}
 
 
-
     
-
+{#if showTryFreeModal}
+<div class="modal" tabindex="-1" role="dialog" style="display: block;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: blue;">Start your 1-Week FREE trial.</h5>
+       
+        <button type="button" class="close" aria-label="Close" on:click={closePopup}>
+          <span aria-hidden="true">&times;</span>
+        </button>
+       
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" bind:value={firstName} placeholder="Enter your first name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" bind:value={email} placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="tel" class="form-control" id="mobile" bind:value={mobile} placeholder="Enter your mobile number">
+          </div>
+          <div class="form-group">
+            <label for="companyName">Company Name</label>
+            <input type="text" class="form-control" id="companyName" bind:value={companyName} placeholder="Enter your company name">
+          </div>
+          <div class="form-group">
+            <label for="linkedIn">LinkedIn</label>
+            <input type="text" class="form-control" id="linkedIn" bind:value={linkedIn} placeholder="Enter your LinkedIn profile URL">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <textarea class="form-control" id="address" bind:value={address} placeholder="Enter your address"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" on:click={closePopup}>Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
 
 <style>
   
@@ -238,13 +299,13 @@
   }
 
   .popup-section {
-    width: calc(50% - 20px); /* Divide the width equally among two sections */
-    height: 25%; /* Divide the height equally among four sections */
+    width: calc(50% - 20px); 
+    height: 25%; 
     padding: 10px;
   }
 
   .custom-paragraph {
-    text-align: center; /* Center the paragraph horizontally */
+    text-align: center; 
   }
 
   .popup-content h3 {
@@ -298,6 +359,9 @@
     cursor: pointer;
   }
  
+  .modal {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control transparency */
+  }
 
 
   
