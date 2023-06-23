@@ -1,13 +1,14 @@
 
 <script>
   import { createEventDispatcher } from 'svelte';
+ 
   import 'bootstrap/dist/css/bootstrap.min.css';
 
   const dispatch = createEventDispatcher();
   let showWhyRecruitlyPopup = false;
-  let showPricingPopup = false;
+  
   let showOverviewPopup = false;
-  let showAutomationPopup =false;
+ 
   let featureIndex = 0;
   const features = [
     { text: 'ATS', color: 'blue' },
@@ -19,19 +20,14 @@
     showWhyRecruitlyPopup = true;
   }
 
-  function openPricingPopup() {
-    showPricingPopup = true;
-  }
-  function openAutomationPopup() {
-    showAutomationPopup = true;
-  }
- 
+  
+
 
   function closePopup() {
     showWhyRecruitlyPopup = false;
-    showPricingPopup = false;
+    
     showOverviewPopup = false;
-    showAutomationPopup=false;
+    
   }
   function openOverview() {
    
@@ -58,12 +54,72 @@
   <div class="overview-button-container">
     <button class="overview-button" on:click={openOverview}>Overview</button>
   </div>
+  <section class="features-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fa fa-search"></i>
+            <h3>Powerful Search</h3>
+            <p>Efficiently search and filter through a large pool of candidates.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fa fa-envelope"></i>
+            <h3>Email Integration</h3>
+            <p>Seamlessly integrate with your email client for easy communication.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fa fa-users"></i>
+            <h3>Collaborative Hiring</h3>
+            <p>Collaborate with your team to make better hiring decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h2>What Our Clients Say</h2>
+          <div class="testimonial">
+            <p>"Recuitly.io has transformed our hiring process. We found the perfect candidates in no time."</p>
+            <p class="testimonial-author">John Doe, CEO at ABC Company</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 Recuitly.io. All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="footer-links">
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
    </main>
 
 <div class="information">
   <p on:click={openWhyRecruitlyPopup} style="color:blue;">Why Recruitly</p>
-  <p on:click={openAutomationPopup} style="color:blue;">Automation</p>
-  <p on:click={openPricingPopup} style="color:blue;">Pricing</p>
+  <p style="color:blue;">Automation</p>
+  <p  style="color:blue;">Pricing</p>
 </div>
 
 {#if showWhyRecruitlyPopup}
@@ -97,44 +153,7 @@
    </div>
     </div>
     {/if}
-    {#if showPricingPopup}
-    <div class="popup pricing-popup">
-      <div class="popup-content">
-        <button class="close-button" on:click={closePopup}>&times;</button>
-        <div class="popup-section">
-          <h3>Recruitly Pricing</h3>
-          <div class="pricing-tier">
-            <h4>Solo</h4>
-            <p class="custom-paragraph">For independent recruiters</p>
-            <p class="custom-paragraph pricing-details">
-              $35/user/month
-            </p>
-          </div>
-          <div class="pricing-tier">
-            <h4>Startup</h4>
-            <p class="custom-paragraph">For startup agencies</p>
-            <p class="custom-paragraph pricing-details">
-              $50/user/month
-            </p>
-          </div>
-          <div class="pricing-tier">
-            <h4>Professional</h4>
-            <p class="custom-paragraph">For established teams</p>
-            <p class="custom-paragraph pricing-details">
-              $75/user/month
-            </p>
-          </div>
-          <div class="pricing-tier">
-            <h4>Enterprise</h4>
-            <p class="custom-paragraph">For large organizations</p>
-            <p class="custom-paragraph pricing-details">
-              $100/user/month
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  {/if}
+   
   
   
 {#if showOverviewPopup}
@@ -148,29 +167,7 @@
   </div>
 {/if}
 
-{#if showAutomationPopup}
-  <div class="popup automation-popup" on:click={closePopup}>
-    <div class="popup-content">
-      <button class="close-button" on:click={closePopup}>&times;</button>
-      <div class="popup-section">
-        <h3>Recruiting Automation</h3>
-        <p class="custom-paragraph">Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each day.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Save time</h3>
-        <p class="custom-paragraph">Increase efficiency by creating workflows that automate repetitive and common tasks, save hours each week.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Be in control</h3>
-        <p class="custom-paragraph">Ensure that recruiting standards are enforced automatically, and build a streamlined and error-proof workflow.</p>
-      </div>
-      <div class="popup-section">
-        <h3>Automate everything</h3>
-        <p class="custom-paragraph">Automate mundane tasks so your team can focus on delivering a smooth experience at every step of the recruiting cycle.</p>
-      </div>
-    </div>
-  </div>
-{/if}
+
 
     
 
