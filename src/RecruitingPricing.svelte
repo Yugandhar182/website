@@ -22,7 +22,6 @@
                 <h3 style="color:purple; font-weight:600;">solo</h3>
                 <p>For independent recruiters</p>
                 <h3 >$35</h3>
-                <p>/user/month</p>
               </div>
             </div>
             <div class="col-md-4">
@@ -31,7 +30,6 @@
                 <h3 style="color:purple; font-weight:600;">Startup</h3>
                 <p>For startup agencies</p>
                 <h3 >$50</h3>
-                <p>/user/month</p>
               </div>
             </div>
             <div class="col-md-4">
@@ -40,16 +38,6 @@
                 <h3 style="color:purple; font-weight:600;">Professional</h3>
                 <p>For established teams</p>
                 <h3 >$75</h3>
-                <p>/user/month</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="feature-card">
-                <i class="fa fa-users"></i>
-                <h3 style="color:purple; font-weight:600;">Enterprise</h3>
-                <p>For large organisations</p>
-                <h3 >$100</h3>
-                <p>/user/month</p>
               </div>
             </div>
           </div>
@@ -62,18 +50,16 @@
   </section>
   
   <style>
-    .hero-section {
+      .hero-section {
     text-align: center;
-    margin-top: -100px;
     margin-bottom: 100px;
   }
    
   
-  .recruiting-pricing-section h2 {
-        margin-top: 1px;
-    margin-bottom: 1px;
+    .recruiting-pricing-section h1 {
+      color: blue;
       font-weight: bold;
-      font-size: 3rem;
+      font-size: 5rem;
     }
   
    
@@ -95,7 +81,7 @@
 
     .pricing-component {
       width: 100%;
-      height: 150vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
