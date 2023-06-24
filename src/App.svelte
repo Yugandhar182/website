@@ -48,7 +48,7 @@
   }, 2000);
 
   function navigateToAutomation() {
-    window.location.href = '/website/src/RecruitingAutomation.svelte'; 
+    window.location.href = '/src/RecruitingAutomation.svelte'; 
   }
   function navigateToPricing() {
     window.location.href = '/src/RecruitingPricing.svelte'; 
