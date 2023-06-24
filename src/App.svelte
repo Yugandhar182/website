@@ -2,7 +2,9 @@
 <script>
   import { createEventDispatcher } from 'svelte';
  
+ import RecruitingAutomation from './RecruitingAutomation.svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
+  import RecruitingPricing from './RecruitingPricing.svelte';
   
   const dispatch = createEventDispatcher();
   
