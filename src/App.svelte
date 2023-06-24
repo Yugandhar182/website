@@ -1,11 +1,9 @@
 
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { onMount } from 'svelte';
-  import RecruitingAutomation from './RecruitingAutomation.svelte';
+ 
   import 'bootstrap/dist/css/bootstrap.min.css';
-  import RecruitingPricing from './RecruitingPricing.svelte';
-
+  
   const dispatch = createEventDispatcher();
   
   
@@ -18,25 +16,6 @@
   let companyName = '';
   let linkedIn = '';
   let address = '';
-  let showRecruitingAutomation = false; 
-  let showRecruitingPricing = false;
-
-// ... your existing code ...
-
-function openRecruitingAutomation() {
-  showRecruitingAutomation = true;
-}
-
-function closeRecruitingAutomation() {
-  showRecruitingAutomation = false;
-}
-function openRecruitingPricing() {
-  showRecruitingPricing = true;
-}
-
-function closeRecruitingPricing() {
-  showRecruitingPricing = false;
-}
  
   let featureIndex = 0;
   const features = [
@@ -68,39 +47,42 @@ function closeRecruitingPricing() {
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
 
- 
+  function navigateToAutomation() {
+    window.location.href = '/src/RecruitingAutomation.svelte'; 
+  }
+  function navigateToPricing() {
+    window.location.href = '/src/RecruitingPricing.svelte'; 
+  }
+  
+  
  
  
 </script>
 
 <main>
 
-  
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
-      <li><a href="#automation"  on:click={openRecruitingAutomation} style="color: blue; font-weight: 700;">Automation</a></li>
-      <li><a href="#pricing" on:click={openRecruitingPricing}  style="color: blue; font-weight: 700;">Pricing</a></li>
+   
+      <li><a on:click={navigateToAutomation} style="color: blue; font-weight: 700; cursor: pointer;">Automation</a></li>
+      <li><a on:click={navigateToPricing} style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a></li>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
-
-  </div>
+     
+    </div>
   
     
-   
-  
-    {#if showRecruitingAutomation}
-      <RecruitingAutomation onClose={closeRecruitingAutomation} />
-    {/if}
-    {#if showRecruitingPricing}
-    <RecruitingPricing onClose={closeRecruitingPricing} />
-  {/if}
+      
 
- <div class="container">
+  
+  
+  <div class="container">
     <h1 class="display-4"style="color:blue;font-weight: 700;" > Recruitment</h1>
      <h1 class="display-4"style="color:blue;font-weight: 700;"><span class="feature-text" style="color: {features[featureIndex].color}; font-weight: 700;">
       {features[featureIndex].text}
     </span>
     System</h1>
       
+    
    <p class="card-text">Recruitly® is built to streamline agency recruitment processes and help businesses grow as a result.</p>
   </div>
   <div class="overview-button-container">
@@ -360,7 +342,7 @@ function closeRecruitingPricing() {
   }
 
   body {
-    background-color: wheat;
+    background-color: #e2f3fc;
   }
   .close-button {
     position: absolute;
@@ -404,9 +386,6 @@ function closeRecruitingPricing() {
     background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control transparency */
   }
 
-  .spacer {
-  flex-grow: 1;
-}
 
   
 </style>
