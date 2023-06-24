@@ -51,7 +51,7 @@
     window.location.href = '/src/RecruitingAutomation.svelte'; 
   }
   function navigateToPricing() {
-    window.location.href = '/src/RecruitingPricing.svelte'; 
+    window.location.href = '/public/RecruitingPricing.svelte'; 
   }
   
   
