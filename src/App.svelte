@@ -2,9 +2,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
  
- import RecruitingAutomation from './RecruitingAutomation.svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
-  import RecruitingPricing from './RecruitingPricing.svelte';
   
   const dispatch = createEventDispatcher();
   
@@ -66,8 +64,8 @@
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
    
-      <li><a on:click={navigateToAutomation} style="color: blue; font-weight: 700; cursor: pointer;">Automation</a></li>
-      <li><a on:click={navigateToPricing} style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a></li>
+      <a on:click={navigateToAutomation} style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
+      <a on:click={navigateToPricing} style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
     </div>
