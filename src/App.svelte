@@ -2,7 +2,7 @@
 <script>
   import { createEventDispatcher } from 'svelte';
  
-  import 'bootstrap/dist/css/bootstrap.min.css';
+ 
   
   const dispatch = createEventDispatcher();
   
