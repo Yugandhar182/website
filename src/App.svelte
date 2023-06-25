@@ -59,7 +59,7 @@
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
    
-     <a href="/website/src/RecruitingAutomation.svelte" >Automation</a>
+     <a href="Yugandhar182/website/src/RecruitingAutomation.svelte" >Automation</a>
     <a href="/website/src/RecruitingPricing.svelte" >Pricing</a>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
