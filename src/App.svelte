@@ -47,12 +47,7 @@
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
 
-  function navigateToAutomation() {
-    window.location.href = 'RecruitingAutomation.svelte'; 
-  }
-  function navigateToPricing() {
-    window.location.href = 'RecruitingPricing.svelte'; 
-  }
+  
   
   
  
@@ -64,8 +59,8 @@
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
    
-     <a href="RecruitingAutomation.svelte" style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
-    <a href="RecruitingPricing.svelte" style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
+     <a href="src/RecruitingAutomation.svelte" style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
+    <a href="src/RecruitingPricing.svelte" style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
     </div>
