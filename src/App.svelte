@@ -1,11 +1,10 @@
 
 <script>
   import { createEventDispatcher } from 'svelte';
- 
- import 'bootstrap/dist/css/bootstrap.min.css';
-  
+  import 'bootstrap/dist/css/bootstrap.min.css';
   const dispatch = createEventDispatcher();
-  
+
+
   
   let showOverviewPopup = false;
   let showWhyRecruitlyPopup = false;
@@ -47,6 +46,12 @@
     featureIndex = (featureIndex + 1) % features.length;
   }, 2000);
 
+  function navigateToAutomation() {
+    window.location.href = '/src/RecruitingAutomation.svelte'; 
+  }
+  function navigateToPricing() {
+    window.location.href = '/src/RecruitingPricing.svelte'; 
+  }
   
   
   
@@ -58,9 +63,8 @@
 
   <div class="information">
     <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
-   
-    <a href="website/src/recruitingautomation.svelte"   onclick="window.open('website/src/recruitingautomation.svelte.svelte', '_self');">Automation</a>
-    <a href="website/src/recruitingpricing.svelte"  onclick="window.open('website/src/recruitingpricing.svelte', '_self');">Pricing</a>
+    <a on:click={navigateToAutomation} style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
+    <a on:click={navigateToPricing} style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
     </div>
