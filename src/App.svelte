@@ -1,14 +1,18 @@
-
 <script>
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher} from 'svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
+  import { navigate } from "svelte-navigator";
+
+
+  import Home from './Home.svelte';
+
   const dispatch = createEventDispatcher();
-  import recruitingautomation from './recruitingautomation.svelte';
-  import recruitingpricing from './recruitingpricing.svelte';
+  import { Router, Link, Route } from "svelte-routing";
+  import RecruitingAutomation from "./recruitingautomation.svelte";
+  import RecruitingPricing from "./recruitingpricing.svelte";
 
 
 
-  
   let showOverviewPopup = false;
   let showWhyRecruitlyPopup = false;
   let showTryFreeModal = false;
@@ -18,13 +22,15 @@
   let companyName = '';
   let linkedIn = '';
   let address = '';
- 
+
   let featureIndex = 0;
   const features = [
     { text: 'ATS', color: 'blue' },
     { text: 'CRM', color: 'green' },
     { text: 'Marketing', color: 'purple' }
   ];
+ 
+
   function openTryFreeModal() {
     showTryFreeModal = true;
   }
@@ -50,15 +56,12 @@
   }, 2000);
 
   function navigateToAutomation() {
-    window.location.href = 'src/RecruitingAutomation.svelte'; 
+    window.location.href = ("/recruiting_automation");
   }
+
   function navigateToPricing() {
-    window.location.href = 'src/RecruitingPricing.svelte'; 
+    navigate("/recruiting_pricing", { replace: true });
   }
-  
-  
-  
- 
  
 </script>
 
@@ -67,16 +70,22 @@
   <div class="information">
     <a on:click={openWhyRecruitlyPopup}  class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
     <span class="spacer"></span>
-    <a on:click={navigateToAutomation} target="_blank" style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
-    <span class="spacer"></span>
-    <a on:click={navigateToPricing}  target="_blank" style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
-    <span class="spacer"></span>
-      <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
+   <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
     </div>
+    <div>
+      <Router>
+        <nav>
+          <Link to="/">Home</Link>
+          <a on:click={navigateToAutomation}>Automation</a>
+          <a on:click={navigateToPricing}>Pricing</a>
+        </nav>
   
-    
-      
+        <Route path="/" component={Home} />
+        <Route path="/recruiting_automation" component={RecruitingAutomation} />
+        <Route path="/recruiting_pricing" component={RecruitingPricing} />
+      </Router>
+    </div>
 
   
   
@@ -160,6 +169,8 @@
       </div>
     </div>
   </footer>
+
+  
    </main>
 
    {#if showWhyRecruitlyPopup}
