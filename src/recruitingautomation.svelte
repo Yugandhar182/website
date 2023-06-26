@@ -1,9 +1,5 @@
 <script>
-    export let onClose;
   
-    function closeComponent() {
-      onClose();
-    }
   </script>
   
   <section class="recruiting-automation-section">
