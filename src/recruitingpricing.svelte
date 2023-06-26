@@ -1,5 +1,5 @@
 <script>
-  
+  import 'bootstrap/dist/css/bootstrap.min.css';
   </script>
   
   <section class="Recruitly Pricing">
