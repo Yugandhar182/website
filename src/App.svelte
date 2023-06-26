@@ -3,6 +3,9 @@
   import { createEventDispatcher } from 'svelte';
   import 'bootstrap/dist/css/bootstrap.min.css';
   const dispatch = createEventDispatcher();
+  import recruitingautomation from './recruitingautomation.svelte';
+  import recruitingpricing from './recruitingpricing.svelte';
+
 
 
   
@@ -62,12 +65,12 @@
 <main>
 
   <div class="information">
-    <a on:click={openWhyRecruitlyPopup} class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
+    <a on:click={openWhyRecruitlyPopup}  class="why-recruitly-anchor" style="color: blue; font-weight: 700;">Why Recruitly</a>
     <span class="spacer"></span>
     <a on:click={navigateToAutomation} target="_blank" style="color: blue; font-weight: 700; cursor: pointer;">Automation</a>
-        <span class="spacer"></span>
+    <span class="spacer"></span>
     <a on:click={navigateToPricing}  target="_blank" style="color: blue; font-weight: 700; cursor: pointer;">Pricing</a>
-      <span class="spacer"></span>
+    <span class="spacer"></span>
       <li><a on:click={openTryFreeModal} style="color: blue; font-weight: 700;" class="why-recruitly-anchor" >Try Free</a></li>
      
     </div>
@@ -258,10 +261,10 @@
 {/if}
 
 <style>
+  
   .spacer {
   margin: 0 10px;
 }
-    
 
   .container {
     text-align: center;
